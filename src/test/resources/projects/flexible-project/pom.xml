@@ -18,7 +18,7 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>com.google.cloud.tools</groupId>
+        <groupId>com.google.experimental.akerekes</groupId>
         <artifactId>appengine-maven-plugin</artifactId>
         <version>${appengine-maven-plugin.version}</version>
         <configuration>
