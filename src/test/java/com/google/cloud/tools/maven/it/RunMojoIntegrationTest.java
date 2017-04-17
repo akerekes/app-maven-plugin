@@ -104,14 +104,11 @@ public class RunMojoIntegrationTest extends AbstractMojoIntegrationTest {
   private Object[] parametersForTestRun() {
     List<Object[]> result = new ArrayList<>();
     for (SupportedDevServerVersion serverVersion : SupportedDevServerVersion.values()) {
-      for (String[] profileAndServiceName : new String[][]{
-        { "", "standard-project"},
-        { "base-it-profile,appyamls", "standard-project-appyamls"},
-        { "base-it-profile,services", "standard-project-services"}
-        } ) {
-        result.add(
-            new Object[]{ serverVersion, profileAndServiceName[0].split(","), profileAndServiceName[1] });
-      }
+        result.add(new Object[]{ serverVersion, new String[0], "standard-project" });
+        result.add(new Object[]{ serverVersion, new String[]{ "base-it-profile", "appyamls" },
+            "standard-project-appyamls" });
+        result.add(new Object[]{ serverVersion, new String[]{ "base-it-profile", "services" },
+          "standard-project-services" });
     }
     return result.toArray(new Object[0]);
   }
